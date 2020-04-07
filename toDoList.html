@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab Assignment: 4/7/20</title>
+</head>
+<body>
+    <h1 class="heading">List of Chores:</h1>
+    <ul id="list">
+        <li class="items-list">Wash dishes</li>
+        <li class="items-list">Vacuum</li>
+        <li class="items-list">Wipe tables</li>
+        <li class="items-list">Take out trash</li>
+        <li class="items-list">Clean bathroom</li>
+    </ul>
+    <form id="form">
+    <input type="text" id="choreInput" name="choreInput">
+    </form>
+    <button id="pressAdd">
+        Add new chore
+    </button>
+  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+    <script type="text/javascript">
+
+        $("#pressAdd").click(function(){ // on click function
+            $("ul").append($("<li>", { // adds to the bottom of the list a new li
+            text: $("input").val() // the new li is added with the input value from the textbox
+            }));
+        });
+
+        $("#pressAdd").click(function(){ // on click function
+            $("input").val(""); // the input value is changed to an empty string
+        })
+
+        $("ul").on("click", function(){
+            $("li").remove();
+        })
+
+    </script>
+
+</body>
+</html>
